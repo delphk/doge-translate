@@ -6,7 +6,7 @@ import Translate from "./Translate";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Header />
         <Translate />
       </div>

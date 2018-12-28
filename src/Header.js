@@ -7,7 +7,8 @@ const Header = () => {
         <span style={{ color: "#3284FF" }}>D</span>
         <span style={{ color: "#FF3424" }}>o</span>
         <span style={{ color: "#FFBB00" }}>g</span>
-        <span style={{ color: "#26B14C" }}>e</span> Translate
+        <span style={{ color: "#26B14C" }}>e</span>
+        <span style={{ fontWeight: "550" }}> Translate</span>
       </h1>
     </div>
   );
