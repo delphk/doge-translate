@@ -8,6 +8,7 @@
 }
 .container {
   background: rgb(247, 247, 247);
+  height: 200px;
   border: 1px solid lightgray;
 }
 
@@ -23,9 +24,10 @@
 .translate-input {
   border: none;
   font-size: 24px;
-  padding: 2%;
+  padding: 3%;
   width: 100%;
   height: 100%;
+  min-height: 200px;
   box-sizing: border-box;
   resize: none;
 }
@@ -43,19 +45,15 @@
   padding: 2%;
   font-size: 24px;
   overflow: scroll;
+  min-height: 200px;
 }
 
-button {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  background: #3284ff;
-  color: white;
-  position: relative;
-  left: 90%;
-  top: -70%;
-}
+@media (max-width: 600px) {
+  .translate-container {
+    display: block;
+  }
 
-button:focus {
-  outline: none;
+  .display-translation {
+    max-height: 340px;
+  }
 }
