@@ -2,6 +2,8 @@
 
 Like Google Translate, but better
 
+https://doge-translate.netlify.com/
+
 ### Now with
 
 Speech recognition and speech synthesis! Much wow. Speech recognition only supported on Chrome browsers currently.
