@@ -11,14 +11,14 @@ class Translate extends Component {
       recording: false,
       input: ""
     };
+  }
+
+  startRecording = () => {
     this.recognition = new SpeechRecognition();
     this.recognition.continuous = true;
     this.recognition.interimResults = true;
     this.recognition.lang = "en-US";
     this.recognition.maxAlternatives = 1;
-  }
-
-  startRecording = () => {
     this.setState({ recording: true });
     this.recognition.start();
     this.recognition.onresult = event => {
