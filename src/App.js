@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./Header";
-import Translate from "./Translate";
+import Header from "./components/Header";
+import Translate from "./components/Translate";
 
 class App extends Component {
   render() {

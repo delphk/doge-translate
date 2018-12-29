@@ -2,9 +2,14 @@
 
 Like Google Translate, but better
 
+### Now with
+
+Speech recognition and speech synthesis! Much wow. Speech recognition only supported on Chrome browsers currently.
+
 ### Built with
 
 - React
+- Web Speech API
 
 ### Acknowledgments
 
