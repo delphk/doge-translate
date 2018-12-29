@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import dogeify from "dogeify-js";
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
+const synth = window.speechSynthesis;
 
 class Translate extends Component {
   constructor(props) {
@@ -35,11 +36,22 @@ class Translate extends Component {
     this.state.recording ? this.stopRecording() : this.startRecording();
   };
 
+  speak = input => {
+    const utterThis = new SpeechSynthesisUtterance(input);
+    synth.speak(utterThis);
+  };
+
   handleChange = e => {
     this.setState({ input: e.target.value });
   };
 
+  componentDidMount() {
+    synth.cancel();
+  }
+
   render() {
+    const { input, recording } = this.state;
+    const doge = this.state.input.length > 2 ? dogeify(this.state.input) : "";
     return (
       <div className="container">
         <div className="translate-container">
@@ -53,28 +65,34 @@ class Translate extends Component {
               maxLength="5000"
               autoFocus
               onChange={this.handleChange}
-              value={this.state.input}
-              placeholder={this.state.recording ? "Speak now" : "Enter text"}
+              value={input}
+              placeholder={recording ? "Speak now" : "Enter text"}
             />
             <div className="footer">
-              <span
-                className="tooltip"
-                onClick={this.toggleRecording}
-                style={{
-                  fontSize: "20px",
-                  color: this.state.recording ? "#FF3424" : "grey"
-                }}
-              >
-                <i className="fas fa-microphone" />
+              <span className="tooltip" onClick={this.toggleRecording}>
+                <i
+                  style={{
+                    color: recording ? "#FF3424" : "grey"
+                  }}
+                  className="fas fa-microphone"
+                />
                 <span className="tooltiptext">
-                  Turn {this.state.recording ? "off" : "on"} voice input
+                  Turn {recording ? "off" : "on"} voice input
                 </span>
               </span>
-              <span className="char-count">{this.state.input.length}/5000</span>
+              <span className="char-count">{input.length}/5000</span>
             </div>
           </div>
           <div className="display-translation column">
-            {this.state.input.length > 2 ? dogeify(this.state.input) : ""}
+            {doge}
+            <div className="bottom">
+              {doge && (
+                <span className="tooltip" onClick={() => this.speak(doge)}>
+                  <i className="fas fa-volume-up" />
+                  <span className="tooltiptext">Listen</span>
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>
