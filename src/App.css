@@ -1,5 +1,9 @@
+a {
+  text-decoration: none;
+}
+
 .header {
-  color: rgb(131, 131, 131);
+  color: #838383;
   font-size: 24px;
   padding: 0 2%;
 }
@@ -8,7 +12,7 @@
 }
 
 .container {
-  background: rgb(247, 247, 247);
+  background: #f7f7f7;
   height: 200px;
   border: 1px solid lightgray;
 }
@@ -42,11 +46,12 @@
 }
 
 .display-translation {
-  background: rgb(250, 248, 248);
+  background: #fafafa;
   padding: 2%;
   font-size: 24px;
   overflow: scroll;
   min-height: 200px;
+  max-height: 1000px;
 }
 
 .tooltip .tooltiptext {
@@ -84,6 +89,13 @@
 .footer {
   padding: 2%;
 }
+
+.char-count {
+  float: right;
+  font-size: 0.8em;
+  color: grey;
+}
+
 @media (max-width: 600px) {
   .translate-container {
     display: block;

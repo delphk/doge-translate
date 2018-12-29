@@ -70,6 +70,7 @@ class Translate extends Component {
                   Turn {this.state.recording ? "off" : "on"} voice input
                 </span>
               </span>
+              <span className="char-count">{this.state.input.length}/5000</span>
             </div>
           </div>
           <div className="display-translation column">
